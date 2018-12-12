@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="(item,index) of arr">
+            {{item}}--{{index}}
+
+        </div>
+        <div v-for="(item,index) of obj">
+           {{item}}--{{index}}
+    
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+               arr:["jack","mike","tom"],
+               obj:{name:"cheng",age:30,sex:"male"}
+                }    
+        })
+    </script>
+</body>
+</html>

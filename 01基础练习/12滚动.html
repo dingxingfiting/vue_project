@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <style>
+    *{
+        margin: 0;padding: 0;
+    }
+   .navbar{
+       line-height: 80px;
+       text-align: center;
+       background: pink;
+       position: fixed;
+       width: 100%;
+
+   }
+   .content{
+       height: 2000px;
+   }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="navbar" :style="filter">导航</div>
+        <div class="content"></div>
+    </div>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+            filter:{
+                opacity:0
+            }
+        },
+        mounted(){
+            var self=this;
+            window.onscroll=function(){
+                var top=document.documentElement.scrollTop;
+                var opacity=top/200;
+                if(opacity>=1){
+                    opacity=1;
+                }
+                self.filter.opacity=opacity;
+
+            }
+        }
+    })
+    </script>
+</body>
+</html>
