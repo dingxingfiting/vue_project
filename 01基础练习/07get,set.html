@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +8,42 @@
     <title>Document</title>
     <script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.js"></script>
 </head>
-<body>
-   <div id="app">
-       {{sum}}
-   </div>
-    <script>
-      var vm= new Vue({
-           el:"#app",
-           data:{
-            num1:10,
-               num2:10,
-               
-           },
-           computed:{
-               sum:{
-                   get(){
-                       return this.num1+this.num2;
-                   },
-                   set(value){
-                       var arr= value.split("");
-                       this.num1=arr[0];
-                       this.num2=arr[1];
 
-                   }
-               }
-           },
-           method:{
-               handleClick(){
-                   this.sum="w d";
-               }
-           }
-         
-           
-       })
-    
+<body>
+    <div id="app">
+        <p @click="handleClick">{{sum}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                num1: 10,
+                num2: 20,
+
+            },
+            computed: {
+                sum: {
+                    get() {
+                        return this.num1 + this.num2;
+                    },
+                    /* sum值改变的时候触发set方法 */
+                    set(value) {
+                        var arr = value.split("");
+                        this.num1 = arr[0] + "num1";
+                        this.num2 = arr[1];
+
+                    }
+                }
+            },
+            methods: {
+                handleClick() {
+                    this.sum = "w d";
+                }
+            }
+
+
+        })
     </script>
 </body>
+
 </html>

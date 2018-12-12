@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,30 @@
     <script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <style>
-    *{
-        margin: 0;padding: 0;
-    }
-    .item img{
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .item img {
             width: 100px;
         }
-    #app{
-        width: 398px;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        #app {
+            width: 398px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     </style>
 </head>
+
 <body>
     <div id="app">
         <div class="item" v-for="(item,index) of movies">
@@ -32,33 +41,34 @@
         </div>
     </div>
     <script>
-    new Vue({
-        el:"#app",
-        data:{
-            movies:[]
-        },
-        mounted(){
-            $.ajax({
-                url:"https://douban.uieee.com/v2/movie/top250",
-                type:"GET",
-                dataType:"jsonp",
-                success:res=>{
-                   var subjects=res.subjects;
-                   var movies=[];
-                   subjects.forEach(res=>{
-                       var title=res.title;
-                       var imgUrl=res.images.small;
-                       var temp={
-                           title,
-                           imgUrl
-                       }
-                       movies.push(temp);
-                   })
-                  this.movies=movies
-                }
-            })
-        },
-    })
+        new Vue({
+            el: "#app",
+            data: {
+                movies: []
+            },
+            mounted() {
+                $.ajax({
+                    url: "https://douban.uieee.com/v2/movie/top250",
+                    type: "GET",
+                    dataType: "jsonp",
+                    success: res => {
+                        var subjects = res.subjects;
+                        var movies = [];
+                        subjects.forEach(res => {
+                            var title = res.title;
+                            var imgUrl = res.images.small;
+                            var temp = {
+                                title,
+                                imgUrl
+                            }
+                            movies.push(temp);
+                        })
+                        this.movies = movies
+                    }
+                })
+            },
+        })
     </script>
 </body>
+
 </html>

@@ -15,21 +15,21 @@
 
     </div>
     <script>
-        new Vue({
-            el: "#app",
+        var vm = new Vue({
+            el: "#app", 
             data: {
                 num1: 10,
                 num2: 20,
-                computed: {
-                    sum() {
-                        return this.num1+this.num2
+            },
+            computed: {
+                sum() {
+                    return this.num1 + this.num2
 
-                    }
-                },
-                updated(){
-                    console.log(this.sum)
                 }
-            }
+            },
+            updated() {
+                console.log(this.sum)
+            },
         })
     </script>
 </body>

@@ -15,34 +15,30 @@
 
 <body>
     <div id="app">
-        <!-- 3.使用组件 -->
         <item @handle="handleClick"></item>
     </div>
     <script>
-        /* 父组件向子组件传递参数 */
-        var item={
-            
-            data(){
-                return{
-                    msg:"child"
+        var item = {
+            data() {
+                return {
+                    msg: "child"
                 }
             },
-            template:"<div @click='handleClick'>{{msg}}</div>",
-            methods:{
-                handleClick(){
-                    this.$emit("handle",this.msg);
+            template: "<div @click='handleClick'>{{msg}}</div>",
+            methods: {
+                handleClick() {
+                    this.$emit("handle", this.msg);
                 }
             }
-                   
+
         }
         new Vue({
-            el:"#app",
-            /* 2.注册组件 */
-            components:{
+            el: "#app",
+            components: {
                 item
             },
-            methods:{
-                handleClick(option){
+            methods: {
+                handleClick(option) {
                     console.log(option)
                 }
             }

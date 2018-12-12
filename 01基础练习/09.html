@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +8,31 @@
     <title>Document</title>
     <script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.js"></script>
     <style>
-    .show{
-        color: red;
-    }
+        .show {
+            color: red;
+        }
     </style>
 </head>
+
 <body>
     <div id="app">
         <p :class=[isShow] @click="handleClick">hello world</p>
-        
-
     </div>
-    
+
     <script>
         new Vue({
-            el:"#app",
-            data:{
-                isShow:true,
-                color:{
-                    background:"red"
-                }
+            el: "#app",
+            data: {
+                isShow: "show"
             },
-            methods:{
-                handleClick(){
-                this.isShow=!this.isShow
-            }
+            methods: {
+                handleClick() {
+                    this.isShow = (this.isShow == "show") ? "" : "show";
+                }
             }
         })
-    
     </script>
-    
+
 </body>
+
 </html>

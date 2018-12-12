@@ -19,23 +19,27 @@
         <item></item>
     </div>
     <script>
-        // 1.定义组件
-        var item={
-            data(){
-                return{
-                    msg:"hello world"
+        /* 
+        定义子组件
+        data是一个函数
+         */
+         /* 1.定义组件 */
+        var item = {
+            data() {
+                return {
+                    msg: "hello world"
                 }
             },
-            template:"<div>{{msg}}</div>"
-                   
+            template: "<div>{{msg}}</div>"
+
         }
         new Vue({
-            el:"#app",
-            data:{
-                word:"vue sb"
+            el: "#app",
+            data: {
+                word: "vue sb"
             },
             /* 2.注册组件 */
-            components:{
+            components: {
                 item
             }
         })
