@@ -1,0 +1,25 @@
+/* 将所有的颜色放在$colors中统一管理 */
+$colors: (bg: #00bcd4, text-color: #333, primary: #ff2d51);
+@function color($key) {
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $colors.";
+
+    @return null;
+}
+@mixin  ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin  flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back{
+    color:#fff;
+    font-size: 50px;
+}

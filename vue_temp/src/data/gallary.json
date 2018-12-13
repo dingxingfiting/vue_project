@@ -1,0 +1,15 @@
+{
+    "gallary": [{
+            "id": "001",
+            "imgUrl": "http://img1.qunarzz.com/sight/p0/1805/82/82a99919b21ac6a4a3.water.jpg_r_800x800_1d5abdaf.jpg"
+        },
+        {
+            "id": "002",
+            "imgUrl": "http://img1.qunarzz.com/sight/p0/1705/91/91bf2d074897306aa3.img.jpg_r_800x800_35e5282d.jpg"
+        },
+        {
+            "id": "003",
+            "imgUrl": "http://img1.qunarzz.com/sight/p0/1705/25/25e87e6b297fab57a3.img.jpg_r_800x800_cacacad5.jpg"
+        }
+    ]
+}
